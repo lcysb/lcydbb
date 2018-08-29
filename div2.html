@@ -9,10 +9,9 @@
 					border-radius: 20px;
 					width: 600px;
 					height: 800px;
-					margin: auto;
 					position: absolute;
 					top: 0;
-					left: 270px;
+					left: 0px;
 					right: 0;
 					bottom: 0px;
 					display:none;
@@ -131,14 +130,27 @@
 				
 				border-radius:200px;
 			}
+			.back1{
+				
+			}
 		</style>
 		<script>
 			window.onload = function(){
 			}
-			function onclick_1()
-			{
+			function onclick_1(){
 				var view=document.getElementById("content1");
 				view.style.display="block";
+				var y=0;
+				var x=0;
+				var i=window.setInterval(function(){
+				y+=10;
+				x+=20;
+					view.style.top=y+"px";
+					view.style.left=x+"px";
+					if(x>300){
+						clearInterval(i);
+					}
+				},20);
 			}
 		</script>
 	</head>
@@ -167,9 +179,9 @@
 			<ul class="menu3" style="cursor:pointer;">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自我评价
 			</ul>
-			<img src="img5.jpg" class="dog" style="cursor:pointer;">
-			<img src="img1.gif" class="cat1" style="cursor:pointer;">
-			<img src="img4.gif" class="cat2" style="cursor:pointer;">
+			<img src="img5.jpg" id="dog" class="dog" style="cursor:pointer;" onclick="onclick_1()">
+			<img src="img1.gif" id="cat1" class="cat1" style="cursor:pointer;">
+			<img src="img4.gif" id="cat2" class="cat2" style="cursor:pointer;">
 		</div>
 		<div >
 			<div class="content1" id="content1">
@@ -189,6 +201,7 @@
 				<h3 class="bottomline6">联系电话：15968159626</h3>
 				<h3 class="bottomline7">地址：浙江省杭州市萧山区</h3>
 			</div>
+			
 	</body>
 
 </html>
