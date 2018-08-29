@@ -15,7 +15,7 @@
 					left: 270px;
 					right: 0;
 					bottom: 0px;
-					//display:none;
+					display:none;
 			}
 			.catalog{
 				background-color: #81fb9b;
@@ -87,16 +87,60 @@
 				border-bottom:1px solid;
 			}
 			.bottomline2{
-				width:300px;
-				margin-left:300px;
-				margin-top:-280px;
+				width:330px;
+				margin-left:270px;
+				margin-top:-300px;
 				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline3{
+				margin-top:40px;
+				width:280px;
+				margin-left:320px;
+				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline4{
+				margin-top:40px;
+				width:270px;
+				margin-left:330px;
+				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline5{
+				margin-top:40px;
+				width:360px;
+				margin-left:240px;;
+				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline6{
+				margin-top:40px;
+				width:500px;
+				margin-left:100px;
+				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline7{
+				margin-top:40px;
+				width:600px;
+				border-bottom:1px solid;
+				text-align:center;
 			}
 			.head{
 				
 				border-radius:200px;
 			}
 		</style>
+		<script>
+			window.onload = function(){
+			}
+			function onclick_1()
+			{
+				var view=document.getElementById("content1");
+				view.style.display="block";
+			}
+		</script>
 	</head>
 
 	<body>
@@ -106,7 +150,7 @@
 		<br/>
 		<br/>
 		<br/>
-			<ul class="menu1" style="cursor:pointer;">
+			<ul class="menu1" id="menu1" style="cursor:pointer;" onclick="onclick_1()">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人信息
 			</ul>
 		<br/>
@@ -127,7 +171,8 @@
 			<img src="img1.gif" class="cat1" style="cursor:pointer;">
 			<img src="img4.gif" class="cat2" style="cursor:pointer;">
 		</div>
-			<div class="content1" id="content">
+		<div >
+			<div class="content1" id="content1">
 				<div class="fontsize">个人信息</div>
 				<br/>
 				<br/>
@@ -137,6 +182,12 @@
 				</h1>
 				<img src="img5.jpg" class="head">
 				<h3 class="bottomline2">求职意向：大数据开发工程师</h3>
+				<h3 class="bottomline3">出生年月：1996.2.14</h3>
+				<h3 class="bottomline4">性别：男</h3>
+				<h3 class="bottomline3">专业：通信工程（本科）</h3>
+				<h3 class="bottomline5">毕业学校：浙江理工大学</h3>
+				<h3 class="bottomline6">联系电话：15968159626</h3>
+				<h3 class="bottomline7">地址：浙江省杭州市萧山区</h3>
 			</div>
 	</body>
 
