@@ -16,6 +16,19 @@
 					bottom: 0px;
 					display:none;
 			}
+			.content2{
+					background-color: #81d6fb;
+					margin-top:75px;
+					border-radius: 20px;
+					width: 600px;
+					height: 800px;
+					position: absolute;
+					top: 0;
+					left: 0px;
+					right: 0;
+					bottom: 0px;
+					display:none;
+			}
 			.catalog{
 				background-color: #81fb9b;
 				width:250px;
@@ -126,31 +139,112 @@
 				border-bottom:1px solid;
 				text-align:center;
 			}
-			.head{
-				
+			.head1{	
 				border-radius:200px;
 			}
-			.back1{
-				
+			.head2{
+				height:240px;
+				width:200px;
+				border-radius:200px;
+			}
+			.bottomline8{
+				width:420px;
+				margin-left:180px;
+				margin-top:-230px;
+				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline9{
+				margin-top:40px;
+				width:440px;
+				margin-left:160px;;
+				border-bottom:1px solid;
+				text-align:center;
 			}
 		</style>
 		<script>
 			window.onload = function(){
+				var r = new rotatecat();
 			}
-			function onclick_1(){
-				var view=document.getElementById("content1");
-				view.style.display="block";
-				var y=0;
-				var x=0;
-				var i=window.setInterval(function(){
-				y+=10;
-				x+=20;
-					view.style.top=y+"px";
-					view.style.left=x+"px";
-					if(x>300){
-						clearInterval(i);
+			function rotatecat(){
+				var img = document.getElementById("rotatecat");
+				var e=0;
+				var id= setInterval(function(){
+					e-=10;
+					img.style.transform="rotateY("+e+"deg)"
+					if(e>350){
+						clearInterval(id);
 					}
-				},20);
+				},100);
+			}
+			function onclick_1(n){
+				var view=document.getElementById("content1");
+				if(n==1){
+					view.style.display="block";
+					var y=0;
+					var x=0;
+					var i=window.setInterval(function(){
+					y+=10;
+					x+=20;
+						view.style.top=y+"px";
+						view.style.left=x+"px";
+						if(x>300){
+							clearInterval(i);
+						}
+					},20);
+				}
+				if(n==2){
+					var y=150;
+					var x=300;
+					var i=window.setInterval(function(){
+					y-=10;
+					x-=20;
+						view.style.top=y+"px";
+						view.style.left=x+"px";
+						if(x<0){
+							clearInterval(i);
+						}
+					},20);
+					setTimeout(function(){
+					view.style.display="none";
+				},320);
+				}
+			}
+			
+			function onclick_2(n){
+				var view=document.getElementById("content2");
+				if(n==1){
+					view.style.display="block";
+					var y=0;
+					var x=0;
+					var i=window.setInterval(function(){
+					y+=5;
+					x+=20;
+						view.style.top=y+"px";
+						view.style.left=x+"px";
+						if(x>300){
+							clearInterval(i);
+						}
+					},20);
+				}
+				if(n==2){
+				}
+				if(n==2){
+					var y=80;
+					var x=320;
+					var i=window.setInterval(function(){
+					y-=5;
+					x-=20;
+						view.style.top=y+"px";
+						view.style.left=x+"px";
+						if(x<0){
+							clearInterval(i);
+						}
+					},20);
+						setTimeout(function(){
+						view.style.display="none";
+					},320);
+				}
 			}
 		</script>
 	</head>
@@ -162,14 +256,14 @@
 		<br/>
 		<br/>
 		<br/>
-			<ul class="menu1" id="menu1" style="cursor:pointer;" onclick="onclick_1()">
+			<ul class="menu1" id="menu1" style="cursor:pointer;" onclick="onclick_1(1)">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人信息
 			</ul>
 		<br/>
 		<br/>
 		<br/>
 		<br/>
-			<ul class="menu2" style="cursor:pointer;">
+			<ul class="menu2" style="cursor:pointer; " onclick="onclick_2(1)">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教育经历
 			</ul>
 		<br/>
@@ -177,13 +271,12 @@
 		<br/>
 		<br/>
 			<ul class="menu3" style="cursor:pointer;">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自我评价
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特长评价
 			</ul>
-			<img src="img5.jpg" id="dog" class="dog" style="cursor:pointer;" onclick="onclick_1()">
-			<img src="img1.gif" id="cat1" class="cat1" style="cursor:pointer;">
+			<img src="img5.jpg" id="dog" class="dog" style="cursor:pointer;" onclick="onclick_1(1)">
+			<img src="img1.gif" id="cat1" class="cat1" style="cursor:pointer;" onclick="onclick_2(1)">
 			<img src="img4.gif" id="cat2" class="cat2" style="cursor:pointer;">
 		</div>
-		<div >
 			<div class="content1" id="content1">
 				<div class="fontsize">个人信息</div>
 				<br/>
@@ -192,7 +285,7 @@
 				<h1 class="bottomline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				龙晖
 				</h1>
-				<img src="img5.jpg" class="head">
+				<img src="img5.jpg" class="head1">
 				<h3 class="bottomline2">求职意向：大数据开发工程师</h3>
 				<h3 class="bottomline3">出生年月：1996.2.14</h3>
 				<h3 class="bottomline4">性别：男</h3>
@@ -200,8 +293,27 @@
 				<h3 class="bottomline5">毕业学校：浙江理工大学</h3>
 				<h3 class="bottomline6">联系电话：15968159626</h3>
 				<h3 class="bottomline7">地址：浙江省杭州市萧山区</h3>
+				<h1 class="bottomline7" onclick="onclick_1(2)" style="cursor:pointer; color:red">back</h1>
 			</div>
 			
+			<div class="content2" id="content2">
+				<div class="fontsize">教育经历</div>
+				<br/>
+				<br/>
+				<br/>
+				<h1 class="bottomline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				浙江理工大学
+				</h1>
+				<img src="img1.gif" class="head2" id="rotatecat">
+				<h3 class="bottomline8">2015.9-2016.6浙江理工大学电子信息专业</h3>
+				<h3 class="bottomline5">2015.12校ACM竞赛二等奖</h3>
+				<h3 class="bottomline5">2016.4思想道德修养与法律基础课程论文获得校优秀论文</h3>
+				<h3 class="bottomline9">2015.9-2016.6校优秀学生三等奖学金</h3>
+				<h3 class="bottomline7">2016.9-2019.6浙江理工大学通信工程专业</h3>
+				<h3 class="bottomline7">2016.9-2017.6校优秀学生三等奖学金</h3>
+				<h3 class="bottomline7">2017.8-2017.9在浙江引春机械有限公司实习</h3>
+				<h1 class="bottomline7" onclick="onclick_2(2)" style="cursor:pointer; color:red" >back</h1>
+			</div>
 	</body>
 
 </html>
