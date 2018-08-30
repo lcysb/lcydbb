@@ -29,6 +29,19 @@
 					bottom: 0px;
 					display:none;
 			}
+			.content3{
+					background-color: #81d6fb;
+					margin-top:160px;
+					border-radius: 20px;
+					width: 600px;
+					height: 800px;
+					position: absolute;
+					top: 0;
+					left: 0px;
+					right: 0;
+					bottom: 0px;
+					display:none;
+			}
 			.catalog{
 				background-color: #81fb9b;
 				width:250px;
@@ -147,6 +160,12 @@
 				width:200px;
 				border-radius:200px;
 			}
+			.head3{
+				height:240px;
+				width:200px;
+				margin-top:40px;
+				border-radius:200px;
+			}
 			.bottomline8{
 				width:420px;
 				margin-left:180px;
@@ -161,6 +180,18 @@
 				border-bottom:1px solid;
 				text-align:center;
 			}
+			.bottomline10{
+				width:420px;
+				margin-left:180px;
+				margin-top:-270px;
+				border-bottom:1px solid;
+				text-align:center;
+			}
+			.bottomline11{
+				width:440px;
+				text-align:center;
+				margin:30px auto;
+			}
 		</style>
 		<script>
 			window.onload = function(){
@@ -172,9 +203,6 @@
 				var id= setInterval(function(){
 					e-=10;
 					img.style.transform="rotateY("+e+"deg)"
-					if(e>350){
-						clearInterval(id);
-					}
 				},100);
 			}
 			function onclick_1(n){
@@ -228,14 +256,40 @@
 					},20);
 				}
 				if(n==2){
-				}
-				if(n==2){
 					var y=80;
 					var x=320;
 					var i=window.setInterval(function(){
 					y-=5;
 					x-=20;
 						view.style.top=y+"px";
+						view.style.left=x+"px";
+						if(x<0){
+							clearInterval(i);
+						}
+					},20);
+						setTimeout(function(){
+						view.style.display="none";
+					},320);
+				}
+			}
+			
+			function onclick_3(n){
+				var view=document.getElementById("content3");
+				if(n==1){
+					view.style.display="block";
+					var x=0;
+					var i=window.setInterval(function(){
+					x+=20;
+						view.style.left=x+"px";
+						if(x>300){
+							clearInterval(i);
+						}
+					},20);
+				}
+				if(n==2){
+					var x=320;
+					var i=window.setInterval(function(){
+					x-=20;
 						view.style.left=x+"px";
 						if(x<0){
 							clearInterval(i);
@@ -270,29 +324,29 @@
 		<br/>
 		<br/>
 		<br/>
-			<ul class="menu3" style="cursor:pointer;">
+			<ul class="menu3" style="cursor:pointer;" onclick="onclick_3(1)">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特长评价
 			</ul>
 			<img src="img5.jpg" id="dog" class="dog" style="cursor:pointer;" onclick="onclick_1(1)">
 			<img src="img1.gif" id="cat1" class="cat1" style="cursor:pointer;" onclick="onclick_2(1)">
-			<img src="img4.gif" id="cat2" class="cat2" style="cursor:pointer;">
+			<img src="img4.gif" id="cat2" class="cat2" style="cursor:pointer;" onclick="onclick_3(1)">
 		</div>
 			<div class="content1" id="content1">
-				<div class="fontsize">个人信息</div>
+				<div class="fontsize" style="color:white">个人信息</div>
 				<br/>
 				<br/>
 				<br/>
-				<h1 class="bottomline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<h1 class="bottomline" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				龙晖
 				</h1>
-				<img src="img5.jpg" class="head1">
-				<h3 class="bottomline2">求职意向：大数据开发工程师</h3>
-				<h3 class="bottomline3">出生年月：1996.2.14</h3>
-				<h3 class="bottomline4">性别：男</h3>
-				<h3 class="bottomline3">专业：通信工程（本科）</h3>
-				<h3 class="bottomline5">毕业学校：浙江理工大学</h3>
-				<h3 class="bottomline6">联系电话：15968159626</h3>
-				<h3 class="bottomline7">地址：浙江省杭州市萧山区</h3>
+				<img src="img5.jpg" class="head1" >
+				<h3 class="bottomline2" style="color:white">求职意向：大数据开发工程师</h3>
+				<h3 class="bottomline3" style="color:white">出生年月：1996.2.14</h3>
+				<h3 class="bottomline4" style="color:white">性别：男</h3>
+				<h3 class="bottomline3" style="color:white">专业：通信工程（本科）</h3>
+				<h3 class="bottomline5" style="color:white">毕业学校：浙江理工大学</h3>
+				<h3 class="bottomline6" style="color:white">联系电话：15968159626</h3>
+				<h3 class="bottomline7" style="color:white">地址：浙江省杭州市萧山区</h3>
 				<h1 class="bottomline7" onclick="onclick_1(2)" style="cursor:pointer; color:red">back</h1>
 			</div>
 			
@@ -301,7 +355,7 @@
 				<br/>
 				<br/>
 				<br/>
-				<h1 class="bottomline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<h1 class="bottomline" align="center";>
 				浙江理工大学
 				</h1>
 				<img src="img1.gif" class="head2" id="rotatecat">
@@ -313,6 +367,21 @@
 				<h3 class="bottomline7">2016.9-2017.6校优秀学生三等奖学金</h3>
 				<h3 class="bottomline7">2017.8-2017.9在浙江引春机械有限公司实习</h3>
 				<h1 class="bottomline7" onclick="onclick_2(2)" style="cursor:pointer; color:red" >back</h1>
+			</div>
+			<div class="content3" id="content3">
+				<div class="fontsize" style="color:yellow;">特长评价</div>
+				<br/>
+				<h1 class="bottomline" align="center"; style="color:yellow;">
+				能力特长
+				</h1>
+				<img src="img4.gif" class="head3">
+				<h3 class="bottomline10" style="color:yellow;">精通Java，熟悉C、html、CSS、JavaScript、mysql</h3>
+				<h3 class="bottomline5" style="color:yellow;">能熟练使用eclipse、mysql、excel、matlab、multisim等软件</h3>
+				<h3 class="bottomline5" style="color:yellow;">计算机二级（C）95分</h3>
+				<h3 class="bottomline9" style="color:yellow;"> CET4 571 分能熟练听说读写译</h3>
+				<h1 class="bottomline7" style="color:yellow;">自我评价</h1>
+				<h3 class="bottomline11" style="color:yellow;">本人性格开朗，为人细心，做事一丝不苟，能吃苦耐劳，工作脚踏实地，有较强的责任心，具有团队合作精神，又具有较强的独立工作能力，思维活跃，工作认真负责，不推卸责任，能承受工作中的压力。</h3>
+				<h1 class="bottomline7" onclick="onclick_3(2)" style="cursor:pointer; color:red" >back</h1>
 			</div>
 	</body>
 
